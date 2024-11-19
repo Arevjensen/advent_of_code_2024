@@ -19,6 +19,7 @@ pub fn run(part: u8) -> Result<()> {
 }
 
 fn part1(input: &str) -> Result<Solution> {
+    println!("{}", input);
     todo!()
 }
 

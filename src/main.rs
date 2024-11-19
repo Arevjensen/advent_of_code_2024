@@ -8,7 +8,6 @@ struct Cli {
     #[arg(default_value_t = 1)]
     /// Day to run
     day: u32,
-
     /// part of the day to run
     #[arg(default_value_t = 1)]
     part: u8,
