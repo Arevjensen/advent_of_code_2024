@@ -29,6 +29,8 @@ fn part2(input: &str) -> Result<Solution> {
 
 #[cfg(test)]
 mod tests {
+    use rstest::rstest;
+
     use crate::utils::solution::Solution;
 
     use super::*;
@@ -36,19 +38,19 @@ mod tests {
     const TEST_INPUT_ONE: &str = r"";
     const TEST_INPUT_TWO: &str = r"";
 
-    #[test]
-    fn test_part_1() -> Result<()> {
-        let fasit = Solution::from(142u32);
-        let part_solution = part1(TEST_INPUT_ONE)?;
-        assert_eq!(fasit, part_solution);
+    #[rstest]
+    #[case(TEST_INPUT_ONE, Solution::U32(142))]
+    fn test_part_1(#[case] input: &str, #[case] answer: Solution) -> Result<()> {
+        let part_solution = part1(input)?;
+        assert_eq!(answer, part_solution);
         Ok(())
     }
 
-    #[test]
-    fn test_part_2() -> Result<()> {
-        let fasit = Solution::from(281u32);
+    #[rstest]
+    #[case(TEST_INPUT_TWO, Solution::U32(281))]
+    fn test_part_2(#[case] input: &str, #[case] answer: Solution) -> Result<()> {
         let my_soultion = part2(TEST_INPUT_TWO)?;
-        assert_eq!(fasit, my_soultion);
+        assert_eq!(answer, my_soultion);
         Ok(())
     }
 }

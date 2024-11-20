@@ -65,35 +65,3 @@ impl TryFrom<u32> for Day {
         }
     }
 }
-
-impl From<Day> for String {
-    fn from(value: Day) -> Self {
-        match value {
-            Day::One => String::from("1"),
-            Day::Two => String::from("2"),
-            Day::Three => String::from("3"),
-            Day::Four => String::from("4"),
-            Day::Five => String::from("5"),
-            Day::Six => String::from("6"),
-            Day::Seven => String::from("7"),
-            Day::Eight => String::from("8"),
-            Day::Nine => String::from("9"),
-            Day::Ten => String::from("10"),
-            Day::Eleven => String::from("11"),
-            Day::Twelve => String::from("12"),
-            Day::Thirteen => String::from("13"),
-            Day::Fourteen => String::from("14"),
-            Day::Fiftheen => String::from("15"),
-            Day::Sixteen => String::from("16"),
-            Day::Seventeen => String::from("17"),
-            Day::Eighteen => String::from("18"),
-            Day::Nineteen => String::from("19"),
-            Day::Twenty => String::from("20"),
-            Day::Twentyone => String::from("21"),
-            Day::Twentytwo => String::from("22"),
-            Day::Twentythree => String::from("23"),
-            Day::Twentyfour => String::from("24"),
-            Day::TwentyFive => String::from("25"),
-        }
-    }
-}
