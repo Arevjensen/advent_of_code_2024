@@ -1,5 +1,5 @@
 use anyhow::Result;
-use aoc_2024::utils::enums::Day;
+use aoc_2024::utils::{enums::Day, tracing::init_tracing};
 use clap::{command, Parser};
 
 #[derive(Parser)]
@@ -16,5 +16,7 @@ struct Cli {
 fn main() -> Result<()> {
     let args = Cli::parse();
     let day = Day::try_from(args.day)?;
+    init_tracing();
+
     aoc_2024::run(day, args.part)
 }
