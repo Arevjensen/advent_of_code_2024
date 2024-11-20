@@ -4,6 +4,7 @@ use anyhow::Result;
 
 use utils::enums::Day;
 pub mod day01;
+mod template;
 pub mod utils;
 // pub mod day02;
 // pub mod day03;

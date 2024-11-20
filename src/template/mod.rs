@@ -19,11 +19,12 @@ pub fn run(part: u8) -> Result<()> {
 }
 
 fn part1(input: &str) -> Result<Solution> {
-    println!("{}", input);
+    tracing::info!("hi, this is a info message");
     todo!()
 }
 
 fn part2(input: &str) -> Result<Solution> {
+    tracing::info!("hi, this is a info message");
     todo!()
 }
 
@@ -32,6 +33,7 @@ mod tests {
     use rstest::rstest;
 
     use crate::utils::solution::Solution;
+    use crate::utils::tracing::init_tracing;
 
     use super::*;
 
@@ -41,6 +43,8 @@ mod tests {
     #[rstest]
     #[case(TEST_INPUT_ONE, Solution::U32(142))]
     fn test_part_1(#[case] input: &str, #[case] answer: Solution) -> Result<()> {
+        init_tracing();
+
         let part_solution = part1(input)?;
         assert_eq!(answer, part_solution);
         Ok(())
@@ -49,6 +53,8 @@ mod tests {
     #[rstest]
     #[case(TEST_INPUT_TWO, Solution::U32(281))]
     fn test_part_2(#[case] input: &str, #[case] answer: Solution) -> Result<()> {
+        init_tracing();
+
         let my_soultion = part2(TEST_INPUT_TWO)?;
         assert_eq!(answer, my_soultion);
         Ok(())
